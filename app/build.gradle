@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "top.cokernut.reactnativetonative"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+        packagingOptions {
+            exclude "lib/arm64-v8a/librealm-jni.so"
+        }
+    }
+    //构建类型，debug，release
+    buildTypes {
+        debug {
+            //类型后缀比如pro类型debug版本，appId就会为：top.cokernut.reactnativedemo.pro.debug，这样一部手机上就可以安装多种版本的App
+            applicationIdSuffix '.debug'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //产品种类，比如pro(专业版)，com(community社区版)，这里的名称不能与buiTypes的一样
+    productFlavors {
+        com {
+            applicationId 'top.cokernut.reactnativetonative.com'
+        }
+        pro {
+            applicationId 'top.cokernut.reactnativetonative.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.facebook.react:react-native:0.38.0'
+}

@@ -1,0 +1,15 @@
+{
+  "name": "reactnativetonative",
+  "version": "1.0.0",
+  "description": "react native to native",
+  "main": "index.android.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-native": "^0.38.0"
+  }
+}
