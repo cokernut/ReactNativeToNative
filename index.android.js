@@ -1,33 +1,43 @@
-'use strict';
-
-import React from 'react';
+import React,{Component} from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
 
-class HelloWorld extends React.Component {
+/**
+ * 基础
+import Base from './source/base/Base';
+
+export default class Root extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.hello}>Welcome!!</Text>
-      </View>
+      <Base />
+    )
+  }
+}
+*/
+
+/**
+ * 进阶
+
+import Advance from './source/advance/Advance';
+
+export default class Root extends Component {
+  render() {
+    return (
+      <Advance />
+    )
+  }
+}
+*/
+
+import UIRoot from './source/ui/UIRoot';
+
+export default class Root extends Component {
+  render() {
+    return (
+      <UIRoot />
     )
   }
 }
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  hello: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
-
-AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
+AppRegistry.registerComponent('ReactNativeView', () => Root);

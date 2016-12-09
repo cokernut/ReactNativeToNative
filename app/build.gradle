@@ -16,6 +16,7 @@ android {
             exclude "lib/arm64-v8a/librealm-jni.so"
         }
     }
+
     //构建类型，debug，release
     buildTypes {
         debug {

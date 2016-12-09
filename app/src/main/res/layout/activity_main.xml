@@ -12,11 +12,20 @@
     tools:context="top.cokernut.reactnativetonative.MainActivity">
 
     <TextView
-        android:id="@+id/tv_go"
+        android:id="@+id/tv_go_my"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40sp"
-        android:text="跳转" />
+        android:text="MyReactActivity" />
+
+    <TextView
+        android:id="@+id/tv_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_go_my"
+        android:textSize="40sp"
+        android:text="MyReactNativeActivity" />
+
     <TextView
         android:id="@+id/tv_setting"
         android:layout_width="wrap_content"
