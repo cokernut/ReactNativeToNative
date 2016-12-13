@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections; 
 
-public class AnExampleReactPackage implements ReactPackage {
+public class ModuleReactPackage implements ReactPackage {
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {

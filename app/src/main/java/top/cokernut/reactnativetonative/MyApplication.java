@@ -10,7 +10,7 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-import top.cokernut.reactnativetonative.modules.AnExampleReactPackage;
+import top.cokernut.reactnativetonative.modules.ModuleReactPackage;
 
 /**
  * Created by Admin on 2016/11/25.
@@ -27,7 +27,7 @@ public class MyApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
-                    new AnExampleReactPackage()
+                    new ModuleReactPackage()
             );
         }
     };

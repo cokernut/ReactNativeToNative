@@ -2,27 +2,37 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  StyleSheet
 } from 'react-native'
 
-import Toast from '../modules/Toast'
+import AndroidToast from '../modules/AndroidToastModule'
 
 class Sample extends Component { 
-
   _press() {
-    Toast.show('使用原生模块包装的Toast', Toast.SHORT);
+    AndroidToast.show('使用原生模块包装的Toast', AndroidToast.SHORT);
   }
 
-  render() {  
-    console.log("Toast");
+  render() {
     return (
-      <TouchableOpacity onPress={this._press}>
-        <Text>Toast</Text>
-        <Text>Toast</Text>
+      <TouchableOpacity style={styles.container} onPress={this._press}>
+        <Text style={styles.welcome}>Toast模块</Text>
       </TouchableOpacity>
     );
   }
-
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#65A35F',
+  },
+  welcome: {
+    fontSize: 40,
+    textAlign: 'center',
+    margin: 10,
+  }
+});
 export default Sample;
