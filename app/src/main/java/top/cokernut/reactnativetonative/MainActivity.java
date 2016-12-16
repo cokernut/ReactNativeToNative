@@ -13,16 +13,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.tv_go_my).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_go_one).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MyReactActivity.class));
+                startActivity(new Intent(MainActivity.this, OneReactActivity.class));
             }
         });
-        findViewById(R.id.tv_go).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_go_two).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MyReactNativeActivity.class));
+                startActivity(new Intent(MainActivity.this, TwoReactActivity.class));
+            }
+        });
+        findViewById(R.id.tv_go_extend).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ExtendReactActivity.class));
             }
         });
         findViewById(R.id.tv_setting).setOnClickListener(new View.OnClickListener() {

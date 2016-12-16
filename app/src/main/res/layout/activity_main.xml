@@ -12,25 +12,37 @@
     tools:context="top.cokernut.reactnativetonative.MainActivity">
 
     <TextView
-        android:id="@+id/tv_go_my"
+        android:id="@+id/tv_go_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="MyReactActivity" />
+        android:layout_margin="20dp"
+        android:textSize="30sp"
+        android:text="纯ReactNative界面" />
 
     <TextView
-        android:id="@+id/tv_go"
+        android:id="@+id/tv_go_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_go_my"
-        android:textSize="40sp"
-        android:text="MyReactNativeActivity" />
+        android:layout_below="@+id/tv_go_one"
+        android:layout_margin="20dp"
+        android:textSize="30sp"
+        android:text="混合界面" />
+
+    <TextView
+        android:id="@+id/tv_go_extend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_go_two"
+        android:layout_margin="20dp"
+        android:textSize="30sp"
+        android:text="继承ReactActivity界面" />
 
     <TextView
         android:id="@+id/tv_setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_go"
-        android:textSize="40sp"
+        android:layout_below="@+id/tv_go_extend"
+        android:layout_margin="20dp"
+        android:textSize="30sp"
         android:text="设置" />
 </RelativeLayout>

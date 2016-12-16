@@ -2,9 +2,13 @@ package top.cokernut.reactnativetonative.modules;
 
 import android.widget.Toast;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,12 +50,30 @@ public class ToastModule extends ReactContextBaseJavaModule {
 
   /**
    * 导出给JavaScript使用的方法，Java方法需要使用注解@ReactMethod。方法的返回类型必须为void。
-   * 比如：AndroidToast.show('使用原生模块包装的Toast', AndroidToast.SHORT);
+   * 调用如：AndroidToast.show('使用原生模块包装的Toast', AndroidToast.SHORT, (msg, str, num) => {console.log(msg + str + num);}););
    * @param message 显示内容
    * @param duration 显示时间参数
+   * @param callback 回调函数
    */
   @ReactMethod
-  public void show(String message, int duration) {
+  public void show(String message, int duration, Callback callback) {
     Toast.makeText(getReactApplicationContext(), message, duration).show();
+    callback.invoke(message, "调用成功", 123); //调用回调函数
+  }
+
+  /**
+   * 导出给JavaScript使用的方法，Java方法需要使用注解@ReactMethod。方法的返回类型必须为void。
+   * 调用如：AndroidToast.show('使用原生模块包装的Toast', AndroidToast.SHORT);
+   * @param message 显示内容
+   * @param duration 显示时间参数
+   * @param promise Promise
+   */
+  @ReactMethod
+  public void showTwo(String message, int duration, Promise promise) {
+    Toast.makeText(getReactApplicationContext(), message, duration).show();
+    WritableMap map = Arguments.createMap();
+    map.putString("name", "Tom");
+    map.putInt("age", 20);
+    promise.resolve(map);
   }
 }

@@ -1,4 +1,4 @@
-package top.cokernut.reactnativetonative.modules;
+package top.cokernut.reactnativetonative;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -8,9 +8,14 @@ import com.facebook.react.bridge.ReactApplicationContext;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections; 
+import java.util.Collections;
 
-public class ModuleReactPackage implements ReactPackage {
+import top.cokernut.reactnativetonative.modules.ToastModule;
+import top.cokernut.reactnativetonative.reactview.RCTWebViewManager;
+import top.cokernut.reactnativetonative.reactview.TextViewManager;
+import top.cokernut.reactnativetonative.reactview.WebViewManager;
+
+public class ReactNativePackage implements ReactPackage {
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
@@ -19,7 +24,11 @@ public class ModuleReactPackage implements ReactPackage {
 
   @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-    return Collections.emptyList();
+    List<ViewManager> views = new ArrayList<>();
+    views.add(new TextViewManager());
+    views.add(new WebViewManager());
+    views.add(new RCTWebViewManager());
+    return views;
   }
 
   @Override

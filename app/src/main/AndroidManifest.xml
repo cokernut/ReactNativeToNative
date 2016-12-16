@@ -20,12 +20,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MyReactActivity"
-            android:label="MyReactActivity">
+            android:name=".OneReactActivity"
+            android:label="@string/reactnative_view_one"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity
-            android:name=".MyReactNativeActivity"
-            android:label="MyReactNativeActivity"
+            android:name=".TwoReactActivity"
+            android:label="@string/reactnative_view_two">
+        </activity>
+        <activity
+            android:name=".ExtendReactActivity"
+            android:label="@string/extend_react_activity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

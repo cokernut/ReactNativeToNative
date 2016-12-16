@@ -11,17 +11,16 @@ import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 
-public class MyReactActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
+/**
+ * 只有React Native界面的Activity
+ */
+public class OneReactActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
-
-    private LinearLayout mReactLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_react);
-        mReactLayout = (LinearLayout) findViewById(R.id.layout);
 
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
@@ -35,7 +34,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
                 .build();
         //这里的ReactNativeView对应index.android.js中AppRegistry.registerComponent('ReactNativeView', () => Root)的ReactNativeView
         mReactRootView.startReactApplication(mReactInstanceManager, "ReactNativeView", null);
-        mReactLayout.addView(mReactRootView);
+        setContentView(mReactRootView);
     }
 
     @Override
